@@ -9,7 +9,7 @@ locals {
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//mysql?ref=v0.4.0"
+  source = "git::git@github.com:juancarestre/terragrunt-infrastructure-modules-example.git//mysql?ref=v0.5.1"
 }
 
 # Include all settings from the root terragrunt.hcl file
@@ -24,7 +24,7 @@ inputs = {
 
   allocated_storage = 20
   storage_type      = "standard"
-
+  master_password = local.environment_vars.locals.db_pass_word
   master_username = "admin"
   # TODO: To avoid storing your DB password in the code, set it as the environment variable TF_VAR_master_password
 }

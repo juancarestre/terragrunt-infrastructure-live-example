@@ -2,4 +2,5 @@
 # feed forward to the child modules.
 locals {
   environment = "qa"
+  db_pass_word = "donttrythispassbro"
 }
